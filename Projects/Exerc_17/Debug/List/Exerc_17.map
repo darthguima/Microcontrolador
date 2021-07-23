@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  22/Jul/2021  20:54:37
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  23/Jul/2021  11:44:25
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -45,10 +45,10 @@ No sections matched the following patterns:
   .intvec   ro code          0x0    0x40  asm.o [1]
                           - 0x40    0x40
 
-"P1":                               0xfa
-  .text     ro code         0x40    0xf8  asm.o [1]
-  .text     ro code        0x138     0x2  asm.o [1]
-                         - 0x13a    0xfa
+"P1":                              0x17a
+  .text     ro code         0x40   0x178  asm.o [1]
+  .text     ro code        0x1b8     0x2  asm.o [1]
+                         - 0x1ba   0x17a
 
 "P2":                             0x8000
   CSTACK             0x2000'0000  0x8000  <Block>
@@ -59,7 +59,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x13a     0xf'ffff  0xf'fec6
+        0x1ba     0xf'ffff  0xf'fe46
   0x2000'8000  0x2003'ffff  0x3'8000
 
 
@@ -75,13 +75,13 @@ command line/config:
     Total:
 
 E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Obj: [1]
-    asm.o               314
+    asm.o               442
     --------------------------------
-    Total:              314
+    Total:              442
 
     Linker created            32'768
 ------------------------------------
-    Grand Total:        314   32'768
+    Grand Total:        442   32'768
 
 
 *******************************************************************************
@@ -98,7 +98,7 @@ __vector_table               0x0        Data  Gb  asm.o [1]
 
 [1] = E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Obj
 
-     314 bytes of readonly  code memory
+     442 bytes of readonly  code memory
   32'768 bytes of readwrite data memory
 
 Errors: none

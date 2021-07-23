@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>1957374329</Checksum>
+        <Checksum>3021079582</Checksum>
     </DebugChecksum>
     <Disassembly>
         <InstrCount>0</InstrCount>
@@ -103,7 +103,7 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\asm.s}.45.1" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\asm.s}.46.1" 0 0 1 "" 0 "" 0</Bp0>
         <Count>1</Count>
     </Breakpoints2>
     <Aliases>
