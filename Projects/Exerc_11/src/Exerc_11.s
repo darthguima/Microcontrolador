@@ -11,41 +11,39 @@
 __iar_program_start
         
 main    
-        MOV R2, #12
-        MOV R1, #0
-        MOV R0, #1
+        MOV R0, #5
+
+        BL fator
+
+fim     B fim
         
-        CMP R2, #0
+
+fator
+        CMP R0, #0
         BEQ final
-        PUSH {R1}
-        PUSH {R2}
-        BAL comp
+        CMP R0, #0
+        BLO over
+        CMP R0, #13
+        BHS over
+        
+        MOV R1, R0
+loop    SUB R1, R1, #1
+        MUL R0, R1
+        CMP R1, #1
+        BNE loop
+        MOV R1, #0
+        B conc
+        
         
 
 final   MOV R0, #1
-        B fim
+        B conc
 over    MOV R0, #-1
+        B conc
         
-posfat        
-        POP {R2}
-        POP {R1}
+conc    BX LR
+     
 
-fim     B fim
-
-comp   
-        CMP R2, #1
-        BNE fato
-volta   SUB R2, #1
-        CMP R2, #0
-        BEQ posfat
-        BAL comp
-
-fato    
-        SMULL R0, R1, R0, R2
-        CMP R1, #0
-        BNE over
-        BAL volta
-        
 
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)
