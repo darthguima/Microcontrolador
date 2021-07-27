@@ -16,7 +16,7 @@ __iar_program_start
 main    
         MOV R0, #563
         MOV R1, #218
-        MOV R2, #0
+        
         
         BL Mul16b
         
@@ -24,6 +24,7 @@ main
 fim     B fim
 
 Mul16b
+        MOV R2, #0
         CMP R1, #0
         BEQ retorno
         ADD R2, R2, R0
