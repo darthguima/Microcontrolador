@@ -25,13 +25,17 @@ fim     B fim
 
 Mul16b
         MOV R2, #0
-        CMP R1, #0
+conta   CMP R1, #0
         BEQ retorno
         ADD R2, R2, R0
         SUB R1, R1, #1
-        B Mul16b
+        B conta
         
 retorno BX LR  
+
+
+
+
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)
         SECTION .intvec:CODE:NOROOT(2)
