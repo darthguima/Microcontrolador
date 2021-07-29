@@ -1,21 +1,21 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  29/Jul/2021  16:08:44
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  29/Jul/2021  15:59:02
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
-#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Exe\Exerc_17.out
+#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\Exe\Exerc_18.out
 #    Map file     =
-#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\List\Exerc_17.map
+#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\List\Exerc_18.map
 #    Command line =
 #        -f
-#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Exe\Exerc_17.out.rsp
-#        (E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Obj\asm.o
+#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\Exe\Exerc_18.out.rsp
+#        (E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\Obj\asm.o
 #        --no_out_extension -o
-#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Exe\Exerc_17.out
+#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\Exe\Exerc_18.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
-#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\List\Exerc_17.map
+#        E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\List\Exerc_18.map
 #        --config "E:\IAR Systems\Embedded Workbench
 #        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
 #        --no_library_search --entry __iar_program_start --vfe --text_out
@@ -45,10 +45,10 @@ No sections matched the following patterns:
   .intvec   ro code          0x0    0x40  asm.o [1]
                           - 0x40    0x40
 
-"P1":                              0x112
-  .text     ro code         0x40   0x110  asm.o [1]
-  .text     ro code        0x150     0x2  asm.o [1]
-                         - 0x152   0x112
+"P1":                              0x1c2
+  .text     ro code         0x40   0x1c0  asm.o [1]
+  .text     ro code        0x200     0x2  asm.o [1]
+                         - 0x202   0x1c2
 
 "P2":                             0x8000
   CSTACK             0x2000'0000  0x8000  <Block>
@@ -59,7 +59,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x152     0xf'ffff  0xf'feae
+        0x202     0xf'ffff  0xf'fdfe
   0x2000'8000  0x2003'ffff  0x3'8000
 
 
@@ -74,14 +74,14 @@ command line/config:
     --------------------------------
     Total:
 
-E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Obj: [1]
-    asm.o               338
+E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\Obj: [1]
+    asm.o               514
     --------------------------------
-    Total:              338
+    Total:              514
 
     Linker created            32'768
 ------------------------------------
-    Grand Total:        338   32'768
+    Grand Total:        514   32'768
 
 
 *******************************************************************************
@@ -96,9 +96,9 @@ __iar_program_start         0x41        Code  Gb  asm.o [1]
 __vector_table               0x0        Data  Gb  asm.o [1]
 
 
-[1] = E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_17\Debug\Obj
+[1] = E:\Desktop\TM4C1294_SM_IAR9-main\Projects\Exerc_18\Debug\Obj
 
-     338 bytes of readonly  code memory
+     514 bytes of readonly  code memory
   32'768 bytes of readwrite data memory
 
 Errors: none

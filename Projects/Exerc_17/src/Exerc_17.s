@@ -32,106 +32,52 @@ main
         BL config_F //CONFIGURA AS SAÍDA DOS LEDS D3 E D4, R3 COMO BASE
 
  	LDR R0, = GPIO_PORTN_DATA_R
-        LDR R4, = GPIO_PORTF_DATA_R
+        LDR R1, = GPIO_PORTF_DATA_R
         
-loop2   MOV R6, #0
-        MOV R7, #00000000b
-        MOV R8, #00000000b
-loop	STR R7, [R0, R2, LSL #2] ; aciona LED com estado atual
-        STR R8, [R4, R3, LSL #2]
-        MOVT R5, #0x000F ; constante de atraso 
-delay   CBZ R5, theend ; 1 clock
-        SUB R5, R5, #1 ; 1 clock
+loop2   MOV R3, #0
+        MOV R4, #00000011b
+        MOV R5, #00010001b
+loop	STR R7, [R0, R4, LSL #2] ; aciona LED com estado atual
+        STR R8, [R1, R5, LSL #2]
+        MOVT R6, #0x000F ; constante de atraso 
+delay   CBZ R6, theend ; 1 clock
+        SUB R6, R6, #1 ; 1 clock
         B delay ; 3 clocks
-theend  ADD R6, #1
-        MOV R9, R6 ;UTILIZAÇÃO DE R9 PARA ENCURTAR UM POUCO A QUANTIDADE DE CÓDIGO, JÁ QUE A MUDANÇA BIT A BIT PODE SER FEITA COM REPETIÇÕES DOS 
-        B comps    ; DE 1, 2 E 4.
+theend  ADD R3, #1
+       
+        B comps
         
 
 comps   
-        CMP R6, #16
-        BEQ loop2
-        
-        
-        
-num1    CMP R9, #1
-        ITT EQ
-        ORREQ R7, R7, #0x02
-          BEQ loop
+        MOV R9, R3
+        AND R9, #1 
+        CMP R9, #0 //BIT 0 SENDO COMPARADO
+        ITE EQ
+          BICEQ R7, #0x02
+          ORRNE R7, #0x02
           
-num2    CMP R9, #2
-        ITTT EQ
-          BICEQ R7, R7, #0x02
-          ORREQ R7, R7, #0x01
-          BEQ loop
+        MOV R9, R3, LSR #1
+        AND R9, #1
+        CMP R9, #0 //BIT 1 SENDO COMPARADO
+        ITE EQ
+          BICEQ R7, #0x01
+          ORRNE R7, #0x01
           
-num3    CMP R9, #3
-        ITT EQ
-          MOVEQ R9, #1
-          BEQ num1
-          
-num4    CMP R9, #4
-        ITTT EQ
-          ORREQ R8, R8, #0x10
-          BICEQ R7, R7, #0x03
-          BEQ loop
-          
-        CMP R9, #5
-        ITT EQ
-          MOVEQ R9, #1
-          BEQ num1
+        MOV R9, R3, LSR #2
+        AND R9, #1
+        CMP R9, #0 //BIT 2 SENDO COMPARADO
+        ITE EQ
+          BICEQ R8, #0x10
+          ORRNE R8, #0x10
         
-        CMP R9, #6
-        ITT EQ
-          MOVEQ R9, #2
-          BEQ num2
-          
-        CMP R9, #7
-        ITT EQ
-          MOVEQ R9, #1
-          BEQ num1
+        MOV R9, R3, LSR #3
+        AND R9, #1
+        CMP R9, #0 //BIT 3 SENDO COMPARADO
+        ITE EQ
+          BICEQ R8, #0x01
+          ORRNE R8, #0x01
         
-        CMP R6, #8
-        ITTTT EQ
-          BICEQ R7, R7, #0x03
-          BICEQ R8, R8, #0x10
-          ORREQ R8, R8, #0x01
-          BEQ loop
-        
-        CMP R6, #9
-        ITT EQ
-          MOVEQ R9, #1
-          BEQ num1
-        
-        CMP R6, #10
-        ITT EQ
-          MOVEQ R9, #2
-          BEQ num2
-        
-        CMP R6, #11
-        ITT EQ
-          MOVEQ R9, #3
-          BEQ num3
-        
-        CMP R6, #12
-        ITT EQ
-          MOVEQ R9, #4
-          BEQ num4
-        
-        CMP R6, #13
-        ITT EQ
-          MOVEQ R9, #1
-          BEQ num1
-        
-        CMP R6, #14
-        ITT EQ
-          MOVEQ R9, #2
-          BEQ num2
-        
-        CMP R6, #15
-        ITT EQ
-          MOVEQ R9, #3
-          BEQ num3
+        B loop
    
 config_N        
         MOV R2, #PORTN_BIT
