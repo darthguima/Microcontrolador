@@ -1,4 +1,4 @@
-# Laboratório 3, Exercícios 16, 17 e 18
+# Laboratório 4, Exercício 20
 
-Os exercícios estão resolvidos dentro da pasta project, com os nomes Exerc_16, Exerc_17 e Exerc_18.
+O exercício resolvido dentro da pasta project, com o nome Exerc_20.
 Obrigado Leonardo Guimarães.
