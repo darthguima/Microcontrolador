@@ -1,4 +1,4 @@
-# Laboratório 4, Exercício 20
+# Laboratório 5, Exercício 21
 
-O exercício resolvido dentro da pasta project, com o nome Exerc_20.
+O exercício resolvido dentro da pasta project, com o nome Exerc_21.
 Obrigado Leonardo Guimarães.
