@@ -1,4 +1,4 @@
-# Laboratório 5, Exercício 21
+# Projeto Final, Calculadora
 
-O exercício resolvido dentro da pasta project, com o nome Exerc_21.
+O projeto final da disciplina está na pasta Projeto_Final em Projects.
 Obrigado Leonardo Guimarães.
